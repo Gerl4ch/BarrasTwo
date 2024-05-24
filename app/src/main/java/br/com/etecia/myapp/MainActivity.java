@@ -2,6 +2,7 @@ package br.com.etecia.myapp;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -14,11 +15,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavView;
     MaterialToolbar idTopBar;
+    FloatingActionButton idFAB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +36,24 @@ public class MainActivity extends AppCompatActivity {
         //Apresentando o XML para o JAVA
         bottomNavView = findViewById(R.id.bottomNavView);
         idTopBar = findViewById(R.id.idTopBar);
+        idFAB = findViewById(R.id.idFAB);
+        idTopBar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),
+                        "Voltar",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         //Criando o evento de clique na TopBar
+       idFAB.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Toast.makeText(getApplicationContext(),
+                       "Cliquei no FAB",Toast.LENGTH_SHORT).show();
+           }
+       });
+
         idTopBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {

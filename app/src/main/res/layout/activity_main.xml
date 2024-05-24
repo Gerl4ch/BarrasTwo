@@ -10,23 +10,32 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/idTopBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:title="TopBar"
             app:menu="@menu/menu_topbar"
             app:navigationIcon="@drawable/back"
-            android:id="@+id/idTopBar"
-            />
+            app:title="TopBar" />
     </com.google.android.material.appbar.AppBarLayout>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/idFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/edit"
+        android:contentDescription="editar"
+        android:layout_marginTop="520dp"
+        android:layout_alignRight="@+id/bottomNavView"
+        />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/bottomNavView"
-        app:menu="@menu/menu_navbar"
         android:layout_alignParentBottom="true"
         app:labelVisibilityMode="labeled"
-        />
+        app:menu="@menu/menu_navbar" />
 
 </RelativeLayout>
